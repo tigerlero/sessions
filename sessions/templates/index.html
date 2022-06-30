@@ -1,0 +1,129 @@
+<html>
+   <head>
+       <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+       <link rel=stylesheet type=text/css href="{{ url_for('static', filename='bootstrap.css') }}">
+       <link rel=stylesheet type=text/css href="{{ url_for('static', filename='navbar.css') }}">
+       <link rel=stylesheet type=text/css href="{{ url_for('static', filename='bootstrap-theme.css') }}">
+       <title>Session Management with Flask</title>
+   </head>
+   <body>
+      <div class="container">
+   <nav class="navbar navbar-light bg-faded">
+        <button class="navbar-toggler hidden-sm-up" type="button" data-toggle="collapse" data-target="#navbar-header" aria-controls="navbar-header">
+          &#9776;
+        </button>
+        <div class="collapse navbar-toggleable-xs" id="navbar-header">
+          <a class="navbar-brand" href="#">Navbar</a>
+          <ul class="nav navbar-nav">
+            <li class="nav-item active">
+              <a class="nav-link" href="{{ url_for('index') }}">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{{ url_for('page1') }}">Link 1</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{{ url_for('page2') }}">Link 2</a>
+            </li>
+          </ul>
+          <form class="form-inline pull-xs-right">
+            <input class="form-control" type="text" placeholder="Search">
+            <button class="btn btn-success-outline" type="submit">Search</button>
+          </form>
+        </div>
+      </nav> <!-- /navbar -->
+
+
+           <div class="title">
+               <h1>Showcase Flask</h1>
+           </div>
+           <div id="content">
+           {% if session['name'] %}
+           You have logged in as <strong>{{session['name']}}</strong> with password <strong>{{session['passwd']}}</strong>.<br/>
+           {% else %}
+           You are not logged in. Click <a href="{{ url_for('form') }}">here</a> to log in.<br/>
+           {% endif %}
+           Page visit counter: <strong>{{session['counter']}}</strong><br />
+           
+           <br /><br />
+           <a href="{{ url_for('clearsession') }}" class="btn btn-danger" role="button">Sign out/clear session</a>
+           <a href="{{ url_for('index') }}">Home</a>
+           </div>
+
+           </div>
+       </div>
+
+<div class="row">
+        <div class="col-md-6">
+          <table class="table">
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Username</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>1</td>
+                <td>Mark</td>
+                <td>Otto</td>
+                <td>@mdo</td>
+              </tr>
+              <tr>
+                <td>2</td>
+                <td>Jacob</td>
+                <td>Thornton</td>
+                <td>@fat</td>
+              </tr>
+              <tr>
+                <td>3</td>
+                <td>Larry</td>
+                <td>the Bird</td>
+                <td>@twitter</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="col-md-6">
+          <table class="table table-striped">
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Username</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>1</td>
+                <td>Mark</td>
+                <td>Otto</td>
+                <td>@mdo</td>
+              </tr>
+              <tr>
+                <td>2</td>
+                <td>Jacob</td>
+                <td>Thornton</td>
+                <td>@fat</td>
+              </tr>
+              <tr>
+                <td>3</td>
+                <td>Larry</td>
+                <td>the Bird</td>
+                <td>@twitter</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+       <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+       <script src="{{ url_for('static', filename='bootstrap.js') }}"></script>
+   </body>
+</html>

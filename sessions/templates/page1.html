@@ -1,0 +1,56 @@
+<html>
+   <head>
+       <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+       <link rel=stylesheet type=text/css href="{{ url_for('static', filename='bootstrap.css') }}">
+       <link rel=stylesheet type=text/css href="{{ url_for('static', filename='navbar.css') }}">
+       <title>Bacon ipsum</title>
+   </head>
+   <body>
+      <div class="container">
+   <nav class="navbar navbar-light bg-faded">
+        <button class="navbar-toggler hidden-sm-up" type="button" data-toggle="collapse" data-target="#navbar-header" aria-controls="navbar-header">
+          &#9776;
+        </button>
+        <div class="collapse navbar-toggleable-xs" id="navbar-header">
+          <a class="navbar-brand" href="#">Navbar</a>
+          <ul class="nav navbar-nav">
+            <li class="nav-item active">
+              <a class="nav-link" href="{{ url_for('index') }}">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{{ url_for('page1') }}">Link 1</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{{ url_for('page2') }}">Link 2</a>
+            </li>
+          </ul>
+          <form class="form-inline pull-xs-right">
+            <input class="form-control" type="text" placeholder="Search">
+            <button class="btn btn-success-outline" type="submit">Search</button>
+          </form>
+        </div>
+      </nav> <!-- /navbar -->
+      	<h1>Bacon ipsum</h1>
+           {% if session['name'] %}
+           Hi <strong>{{session['name']}}</strong>.<br/> Here's some dummy text for you...
+           <blockquote class="blockquote-reverse">
+  				<p>Bacon ipsum dolor amet...</p>
+  				<footer>Butcher <cite title="Source Title">Meat store</cite></footer>
+			</blockquote>
+           {% else %}
+           You haven't logged in... If you want to, click <a href="{{ url_for('form') }}">here</a>.<br/>
+           {% endif %}
+
+           <p>Bacon ipsum dolor amet biltong landjaeger andouille, drumstick cow shankle capicola tri-tip rump boudin beef sirloin bacon. Meatloaf andouille fatback tri-tip capicola cow, filet mignon kevin spare ribs shoulder ground round beef ribs. Prosciutto ball tip kielbasa frankfurter. Bacon prosciutto strip steak biltong ham hock alcatra. Tongue pig sausage, bacon sirloin kielbasa short ribs ham hock alcatra leberkas shankle meatloaf brisket venison chuck.</p>
+
+			<p>Capicola sirloin short ribs, venison pastrami corned beef turducken turkey meatball. Brisket tongue jowl ham tri-tip beef pork belly kevin swine andouille chicken spare ribs ball tip cupim bresaola. Turducken tail prosciutto pork short loin ground round beef shoulder. Bresaola capicola pork belly prosciutto sirloin cupim jowl filet mignon bacon. Venison ham hock beef tenderloin brisket frankfurter short loin.</p>
+
+			<p>Salami meatball leberkas pork chop shankle pork bresaola, spare ribs pig pork belly shank. Shank tri-tip alcatra t-bone filet mignon flank pork belly drumstick tail tongue. Andouille drumstick sausage tail, spare ribs picanha jowl tri-tip alcatra boudin. Andouille meatball leberkas, corned beef ribeye hamburger boudin pork loin salami pastrami chuck capicola spare ribs. Shoulder pastrami meatloaf tri-tip strip steak. Chicken shoulder pork doner. Tail picanha beef ribs, jerky sausage cow doner biltong jowl leberkas meatball swine shankle short ribs venison.</p>
+           </div>
+           </div>
+       </div>
+   </body>
+</html>

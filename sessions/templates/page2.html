@@ -1,0 +1,57 @@
+<html>
+   <head>
+       <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+       <link rel=stylesheet type=text/css href="{{ url_for('static', filename='bootstrap.css') }}">
+       <link rel=stylesheet type=text/css href="{{ url_for('static', filename='navbar.css') }}">
+       <title>Heisenberg ipsum</title>
+   </head>
+   <body>
+      <div class="container">
+   <nav class="navbar navbar-light bg-faded">
+        <button class="navbar-toggler hidden-sm-up" type="button" data-toggle="collapse" data-target="#navbar-header" aria-controls="navbar-header">
+          &#9776;
+        </button>
+        <div class="collapse navbar-toggleable-xs" id="navbar-header">
+          <a class="navbar-brand" href="#">Navbar</a>
+          <ul class="nav navbar-nav">
+            <li class="nav-item active">
+              <a class="nav-link" href="{{ url_for('index') }}">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{{ url_for('page1') }}">Link 1</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{{ url_for('page2') }}">Link 2</a>
+            </li>
+          </ul>
+          <form class="form-inline pull-xs-right">
+            <input class="form-control" type="text" placeholder="Search">
+            <button class="btn btn-success-outline" type="submit">Search</button>
+          </form>
+        </div>
+      </nav> <!-- /navbar -->
+      	<h1>Heisenberg ipsum</h1>
+           {% if session['name'] %}
+           Hi <strong>{{session['name']}}</strong>.<br/> Here's some dummy text for you...
+           <blockquote class="blockquote-reverse">
+  				<p>Heisenberg is cooking...</p>
+  				<footer>F@ck you Pinkman! <cite title="Source Title">every episode</cite></footer>
+			</blockquote>
+           {% else %}
+           You haven't logged in... If you want to, click <a href="{{ url_for('form') }}">here</a>.<br/>
+           {% endif %}
+
+           <p>I have been waiting. I've been waiting all day. Waiting for Gus to send one of his men to kill me. And it's you. Who do you know, who's okay with using children, Jesse? Who do you know... who's allowed children to be murdered... hmm? Gus! He has, he has been ten steps ahead of me at every turn. And now, the one thing that he needed to finally get rid of me is your consent and boy he's got that now. He's got it. And not only does he have that, but he manipulated you into pulling the trigger for him. </p>
+
+			<p>No! You don't even believe that! Gus has cameras everywhere, please. Listen to yourself! No, he has known everything, all along. Where were you today? In the lab? And you don't think it's possible that Tyrus lifted the cigarette out of your locker? Come on! Don't you see? You are the last piece of the puzzle. You are everything that he's wanted. </p>
+
+			<p>You're his cook now. You're the cook and you have proven that you can run a lab without me and now that cook has reason to kill me. Think about it! It's brilliant. So go ahead. If you think that I am capable of doing this, then go ahead. Put a bullet, in my head, and kill me right now. DO IT! Do it. Do it. Do it. </p>
+
+           </div>
+           </div>
+       </div>
+   </body>
+</html>

@@ -1,0 +1,48 @@
+<html>
+   <head>
+       <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+       <link rel=stylesheet type=text/css href="{{ url_for('static', filename='bootstrap.css') }}">
+       <link rel=stylesheet type=text/css href="{{ url_for('static', filename='navbar.css') }}">
+       <title>Bacon ipsum</title>
+   </head>
+   <body>
+      <div class="container">
+   <nav class="navbar navbar-light bg-faded">
+        <button class="navbar-toggler hidden-sm-up" type="button" data-toggle="collapse" data-target="#navbar-header" aria-controls="navbar-header">
+          &#9776;
+        </button>
+        <div class="collapse navbar-toggleable-xs" id="navbar-header">
+          <a class="navbar-brand" href="#">Navbar</a>
+          <ul class="nav navbar-nav">
+            <li class="nav-item active">
+              <a class="nav-link" href="{{ url_for('index') }}">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{{ url_for('page1') }}">Link 1</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{{ url_for('page2') }}">Link 2</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{{ url_for('mypdf') }}">PDF</a>
+            </li>
+          </ul>
+          <form class="form-inline pull-xs-right">
+            <input class="form-control" type="text" placeholder="Search">
+            <button class="btn btn-success-outline" type="submit">Search</button>
+          </form>
+        </div>
+      </nav> <!-- /navbar -->
+      	<h1>PDF Generation</h1>
+        <p>Hello stranger...</p>
+        <p>Sorry I just saw that it's you {{ name }}</p>
+        Get this page as <a href="{{ url_for('mypdf', name=name) }}">PDF</a>.
+           
+           </div>
+           </div>
+       </div>
+   </body>
+</html>
